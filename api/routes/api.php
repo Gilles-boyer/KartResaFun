@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SlotController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FormulaController;
 use App\Http\Controllers\PaymentController;
@@ -57,3 +58,10 @@ Route::get('/reservationformula/{id}', [ReservationFormulaController::class, 'sh
 Route::post('/reservationformula', [ReservationFormulaController::class, 'store']);
 Route::put('/reservationformula/{id}', [ReservationFormulaController::class, 'update']);
 Route::delete('/reservationformula/{id}', [ReservationFormulaController::class, 'destroy']);
+
+//Slot
+Route::get('/slots', [SlotController::class, 'index']);
+Route::get('/slot/{id}', [SlotController::class, 'show']);
+Route::post('/slot', [SlotController::class, 'store']);
+Route::put('/slot/{id}', [SlotController::class, 'update']);
+Route::delete('/slot/{id}', [SlotController::class, 'destroy']);

@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reservations', function (Blueprint $table) {
+        Schema::create('slots', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('client_id')->constrained();
-            $table->date('date');
-            $table->enum('status', ['unconfirmed', 'confirmed', 'arrived', 'postponed'])->default('unconfirmed');
-            $table->text('comment')->nullable();
+            $table->foreignId('reservation_formula_id')->constrained();
+            $table->time('start_time');
+            $table->integer('duration');
+            $table->enum('status', ['waiting', 'in_progress', 'finished'])->default('waiting');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reservations');
+        Schema::dropIfExists('slots');
     }
 };

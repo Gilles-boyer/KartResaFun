@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('reservation_id')->constrained();
             $table->decimal('amount', 8, 2);
-            $table->enum('status', ['unpaid', 'paid']);
+            $table->enum('status', ['unpaid', 'paid'])->default('unpaid');
             $table->string('payment_method');
             $table->text('comment')->nullable();
             $table->timestamps();

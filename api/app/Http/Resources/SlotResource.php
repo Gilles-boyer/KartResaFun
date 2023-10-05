@@ -3,10 +3,9 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
-use App\Http\Resources\ClientResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ReservationResource extends JsonResource
+class SlotResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,10 +16,10 @@ class ReservationResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'client' => new ClientResource($this->client),
-            'date' => $this->date,
+            'reservation_formula_id' => $this->reservation_formula_id,
+            'start_time' => $this->start_time,
+            'duration' => $this->duration,
             'status' => $this->status,
-            'comment' => $this->comment,
         ];
     }
 }

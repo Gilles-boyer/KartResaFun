@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\Reservation::factory(20)->create();
         \App\Models\Payment::factory(20)->create();
         \App\Models\ReservationFormula::factory(20)->create();
+        \App\Models\Slot::factory(20)->create();
     }
 }
