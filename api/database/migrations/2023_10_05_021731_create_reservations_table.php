@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('client_id')->constrained();
             $table->date('date');
+            $table->integer('number_of_adults')->default(0);
+            $table->integer('number_of_children')->default(0);
+            $table->integer('number_of_biplace')->default(0);
             $table->enum('status', ['unconfirmed', 'confirmed', 'arrived', 'postponed'])->default('unconfirmed');
             $table->text('comment')->nullable();
             $table->timestamps();

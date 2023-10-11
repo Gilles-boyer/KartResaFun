@@ -18,10 +18,10 @@ class SlotFactory extends Factory
     public function definition(): array
     {
         return [
-            'reservation_formula_id' => ReservationFormula::all()->random()->id,
+            'reservation_formula_id' => 1,
             'start_time' => $this->faker->time('H:i'),
-            'duration' => $this->faker->numberBetween(10, 60),
-            'status' => $this->faker->randomElement(['waiting', 'in_progress', 'finished']),
+            'duration' => 15,
+            'status' =>'waiting',
         ];
     }
 }

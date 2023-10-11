@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('formulas', function (Blueprint $table) {
+        Schema::create('alert_slots', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('image_url')->nullable();
-            $table->text('description');
-            $table->decimal('price', 8, 2);
-            $table->integer('number_of_sessions');
+            $table->foreignId('alert_id')->constrained();
+            $table->foreignId('slot_id')->constrained();
             $table->timestamps();
         });
     }
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('formulas');
+        Schema::dropIfExists('alert_slots');
     }
 };

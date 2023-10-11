@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreSlotRequest extends FormRequest
+class AlertRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,9 @@ class StoreSlotRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'reservation_formula_id' => 'required|exists:reservation_formulas,id',
-            'start_time' => 'required|date_format:H:i',
-            'duration' => 'required|integer|min:10',
-            'status' => 'required|in:waiting,in_progress,finished',
+            'name' => 'required|string|max:255',
+            'icon' => 'required|string|max:255',
+            'color' => 'required|string|max:7|regex:/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/',
         ];
     }
 }

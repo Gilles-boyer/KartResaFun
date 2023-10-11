@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Slot;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class ReservationFormula extends Model
 {
@@ -23,5 +24,10 @@ class ReservationFormula extends Model
     public function formula()
     {
         return $this->belongsTo(Formula::class);
+    }
+
+    public function slots()
+    {
+        return $this->hasMany(Slot::class);
     }
 }

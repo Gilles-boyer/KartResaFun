@@ -18,6 +18,11 @@ class Slot extends Model
 
     public function reservationFormula()
     {
-        return $this->belongsTo(ReservationFormula::class);
+        return $this->belongsTo(ReservationFormula::class)->with("reservation");
+    }
+
+    public function alerts()
+    {
+        return $this->belongsToMany(Alert::class , 'alert_slots');
     }
 }

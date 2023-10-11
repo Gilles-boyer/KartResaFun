@@ -17,10 +17,11 @@ class FormulaFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->word,
-            'description' => $this->faker->sentence,
-            'price' => $this->faker->randomFloat(2, 0, 100),
-            'number_of_sessions' => $this->faker->numberBetween(1, 10),
+            'name' => "2 sessions de kart",
+            'image_url' => $this->faker->imageUrl(),
+            'description' => $this->faker->paragraph,
+            'price' => 28,
+            'number_of_sessions' => 2,
         ];
     }
 }

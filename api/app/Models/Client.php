@@ -14,4 +14,9 @@ class Client extends Model
         'email',
         'phone',
     ];
+
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class);
+    }
 }

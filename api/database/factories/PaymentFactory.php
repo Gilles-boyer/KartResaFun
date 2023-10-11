@@ -18,11 +18,10 @@ class PaymentFactory extends Factory
     public function definition(): array
     {
         return [
-            'reservation_id' => Reservation::all()->random()->id,
-            'amount' => $this->faker->randomFloat(2, 0, 1000),
-            'status' => $this->faker->randomElement(['unpaid', 'paid']),
+            'reservation_id' => 1,
+            'amount' => 28,
+            'status' => 'paid',
             'payment_method' => $this->faker->randomElement(['credit_card', 'paypal', 'bank_transfer']),
-            'comment' => $this->faker->sentence,
         ];
     }
 }

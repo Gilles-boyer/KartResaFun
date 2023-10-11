@@ -18,9 +18,12 @@ class ReservationFactory extends Factory
     public function definition(): array
     {
         return [
-            'client_id' => Client::all()->random()->id,
-            'date' => $this->faker->date,
-            'status' => $this->faker->randomElement(['unconfirmed', 'confirmed', 'arrived', 'postponed']),
+            'client_id' => 1,
+            'date' => date("Y-m-d"),
+            'number_of_adults' => 5,
+            'number_of_children' => 0,
+            'number_of_biplace' => 0,
+            'status' => 'confirmed',
             'comment' => $this->faker->sentence,
         ];
     }

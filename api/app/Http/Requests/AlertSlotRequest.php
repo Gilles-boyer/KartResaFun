@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class FormulaRequest extends FormRequest
+class AlertSlotRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,11 +22,8 @@ class FormulaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
-            'image_url' => 'nullable|string|max:255',
-            'description' => 'required|string',
-            'price' => 'required|numeric',
-            'number_of_sessions' => 'required|integer',
+            'alert_id' => 'required|exists:alerts,id',
+            'slot_id' => 'required|exists:slots,id',
         ];
     }
 }

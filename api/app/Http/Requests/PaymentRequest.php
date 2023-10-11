@@ -23,7 +23,7 @@ class PaymentRequest extends FormRequest
     {
         return [
             'reservation_id' => 'required|exists:reservations,id',
-            'amount' => 'required|numeric|min:0',
+            'amount' => 'required|numeric',
             'status' => 'required|in:unpaid,paid',
             'payment_method' => 'required|string|max:255',
             'comment' => 'nullable|string|max:1000',

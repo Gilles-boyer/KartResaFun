@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('formulas', function (Blueprint $table) {
+        Schema::create('alerts', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image_url')->nullable();
-            $table->text('description');
-            $table->decimal('price', 8, 2);
-            $table->integer('number_of_sessions');
+            $table->string('icon');
+            $table->string('color');
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('formulas');
+        Schema::dropIfExists('alerts');
     }
 };

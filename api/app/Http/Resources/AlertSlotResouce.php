@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class FormulaResource extends JsonResource
+class AlertSlotResouce extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,11 +16,8 @@ class FormulaResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
-            'image_url' => $this->image_url,
-            'description' => $this->description,
-            'price' => $this->price,
-            'number_of_sessions' => $this->number_of_sessions,
+            'alert_id' => $this->alert_id,
+            'slot_id' => $this->slot_id,
         ];
     }
 }

@@ -61,7 +61,23 @@ Route::delete('/reservationformula/{id}', [ReservationFormulaController::class, 
 
 //Slot
 Route::get('/slots', [SlotController::class, 'index']);
+Route::get('/slots/{date}', [SlotController::class, 'getReservationSlotByDate']);
 Route::get('/slot/{id}', [SlotController::class, 'show']);
 Route::post('/slot', [SlotController::class, 'store']);
 Route::put('/slot/{id}', [SlotController::class, 'update']);
 Route::delete('/slot/{id}', [SlotController::class, 'destroy']);
+
+//Alerts
+Route::get('/alerts', [AlertController::class, 'index']);
+Route::get('/alert/{id}', [AlertController::class, 'show']);
+Route::post('/alert', [AlertController::class, 'store']);
+Route::put('/alert/{id}', [AlertController::class, 'update']);
+Route::delete('/alert/{id}', [AlertController::class, 'destroy']);
+
+//AlertSlots
+Route::get('/alertslots', [AlertSlotController::class, 'index']);
+Route::get('/alertslot/{id}', [AlertSlotController::class, 'show']);
+Route::post('/alertslot', [AlertSlotController::class, 'store']);
+Route::put('/alertslot/{id}', [AlertSlotController::class, 'update']);
+Route::delete('/alertslot/{id}', [AlertSlotController::class, 'destroy']);
+

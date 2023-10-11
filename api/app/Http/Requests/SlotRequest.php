@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class FormulaRequest extends FormRequest
+class SlotRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,11 +22,10 @@ class FormulaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
-            'image_url' => 'nullable|string|max:255',
-            'description' => 'required|string',
-            'price' => 'required|numeric',
-            'number_of_sessions' => 'required|integer',
+            'reservation_formula_id' => 'required|exists:reservation_formulas,id',
+            'start_time' => 'required|date_format:H:i',
+            'duration' => 'required|integer|min:10',
+            'status' => 'required|in:waiting,in_progress,finished',
         ];
     }
 }

@@ -22,9 +22,12 @@ class ReservationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'client_id' => 'required|exists:clients,id',
+            'client_id' => 'required|integer|exists:clients,id',
             'date' => 'required|date',
-            'status' => 'required|in:unconfirmed,confirmed,arrived',
+            'number_of_adults' => 'required|integer|min:0',
+            'number_of_children' => 'required|integer|min:0',
+            'number_of_biplace' => 'required|integer|min:0',
+            'status' => 'required|in:unconfirmed,confirmed,arrived,postponed',
             'comment' => 'nullable|string',
         ];
     }

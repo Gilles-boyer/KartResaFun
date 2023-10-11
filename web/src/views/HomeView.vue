@@ -1,15 +1,17 @@
 <template>
-  <hello-world />
+  <v-container>
+    <TabResa />
+  </v-container>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+  import TabResa from '../components/TabResa'
 
   export default {
     name: 'Home',
 
     components: {
-      HelloWorld,
+      TabResa,
     },
   }
 </script>

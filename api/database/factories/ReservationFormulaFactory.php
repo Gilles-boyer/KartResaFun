@@ -19,9 +19,9 @@ class ReservationFormulaFactory extends Factory
     public function definition(): array
     {
         return [
-            'reservation_id' => Reservation::all()->random()->id,
-            'formula_id' => Formula::all()->random()->id,
-            'number_of_people' => $this->faker->numberBetween(1, 10),
+            'reservation_id' => 1,
+            'formula_id' => 1,
+            'number_of_people' => 5
         ];
     }
 }

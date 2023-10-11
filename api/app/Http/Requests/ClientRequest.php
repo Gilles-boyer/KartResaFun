@@ -23,7 +23,7 @@ class ClientRequest extends FormRequest
     {
         $rules =  [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:clients,email,' . $this->id,
+            'email' => 'nullable|string|email|max:255|unique:clients,email,' . $this->id,
             'phone' => 'required|string|unique:clients,phone,' . $this->id,
         ];
 
